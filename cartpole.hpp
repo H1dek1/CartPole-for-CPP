@@ -1,3 +1,6 @@
+#ifndef __CARTPOLE__
+#define __CARTPOLE__
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -5,7 +8,7 @@
 #include <tuple>
 
 #define MAX_TIME_STEP 200
-#define DT            1.0e-1
+#define DT            1.0e-2
 
 #define G 9.8
 #define L 1.0
@@ -24,6 +27,7 @@ class CartPole
 {
   private:
     double cart_x;
+    const double cart_y = 0.0;
     double cart_v;
     double cart_a;
 
@@ -35,6 +39,7 @@ class CartPole
     double time;
     double reward;
     bool   done;
+
   private:
     std::string movie_name;
     std::ofstream fout;
@@ -85,7 +90,7 @@ bool CartPole::render(std::string episode_name)
     return false;
   }
 
-  fout << time_step << " " << cart_x << " " << pole_x << std::endl;
+  fout << time_step << " " << cart_x << " " << cart_y << " " << pole_x << std::endl;
   fout << std::endl;
 
   std::cout << "File: " << episode_name << " updated !" << std::endl;
@@ -124,3 +129,5 @@ std::tuple<double, double, double, double, double, bool> CartPole::step(int acti
   return std::forward_as_tuple(cart_x, cart_v, pole_x, pole_v, reward, done);
 
 }
+
+#endif //__CARTPOLE__
