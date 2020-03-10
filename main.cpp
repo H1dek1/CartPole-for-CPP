@@ -14,7 +14,7 @@ int main(void){
     bool   done;
 
     std::tie(cart_x, cart_v, pole_x, pole_v) = env.reset();
-    for(int t = 0; t < 2000; t++){
+    for(int t = 0; t < 200; t++){
       int action;
       std::string filename = "episode_" + std::to_string(i);
       env.render(filename);

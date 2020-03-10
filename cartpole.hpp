@@ -7,21 +7,21 @@
 #include <cmath>
 #include <tuple>
 
-#define MAX_TIME_STEP 100
-#define DT            1.0e-2
+#define MAX_TIME_STEP 2000
+#define DT            5.0e-2
 
 #define G 9.8
 #define L 1.0
-#define M_POLE 2.0
-#define M_CART 1.0
+#define M_POLE 1.0
+#define M_CART 4.0
 
 #define CART_X_MAX 2.4
 #define POLE_X_MAX 0.5
 
 #define PUSH_LEFT        0
 #define PUSH_RIGHT       1
-#define FORCE_LEFT      -20.0
-#define FORCE_RIGHT      20.0
+#define FORCE_LEFT      -50.0
+#define FORCE_RIGHT      50.0
 
 class CartPole
 {
@@ -71,7 +71,7 @@ std::tuple<double, double, double, double> CartPole::reset()
 
   cart_x = 0.0;
   cart_v = 0.0;
-  pole_x = 0.75 * M_PI;
+  pole_x = 0.0;
   pole_v = 0.0;
 
   reward = 0.0;
@@ -108,8 +108,6 @@ std::tuple<double, double, double, double, double, bool> CartPole::step(int acti
   if(action == PUSH_RIGHT) force = FORCE_RIGHT;
   else if(action == PUSH_LEFT) force = FORCE_LEFT;
   else std::cout << "ERROR!" << std::endl;
-
-  force = 0.0;
 
   double numerator   = force - M_POLE * G * sin(pole_x) * cos(pole_x) + M_POLE * L * pole_v * pole_v * sin(pole_x);
   double denominator = M_POLE * sin(pole_x) * sin(pole_x) + M_CART;

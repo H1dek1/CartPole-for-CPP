@@ -10,8 +10,8 @@ CXX := g++
 CFLAGS := -Wall -c -O3
 
 $(PROGRAM): main.cpp
-	$(CXX) $^ -o $@
+	@$(CXX) $^ -o $@
 
 .PHONY: clean
 clean:
-	rm data/* image/* $(PROGRAM)
+	@rm data/* image/* $(PROGRAM)
