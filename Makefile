@@ -7,11 +7,12 @@ DATADIR      := data
 IMAGEDIR     := image
 
 CXX := g++
-CFLAGS := -Wall -c -O3
+#CFLAGS := -Wall -c -O3
+INCLUDE := -I$(MAKEFILE_DIR)$(INCDIR)/
 
 $(PROGRAM): main.cpp
-	@$(CXX) $^ -o $@
+	$(CXX) $(CFLAGS) $(INCLUDE) $^ -o $@
 
 .PHONY: clean
 clean:
-	@rm data/* image/* $(PROGRAM)
+	@rm data/* image/* $(PROGRAM) -rf

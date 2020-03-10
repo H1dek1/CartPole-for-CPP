@@ -6,8 +6,9 @@
 #include <string>
 #include <cmath>
 #include <tuple>
+#include <random>
 
-#define MAX_TIME_STEP 2000
+#define MAX_TIME_STEP 200
 #define DT            5.0e-2
 
 #define G 9.8
@@ -25,6 +26,10 @@
 
 class CartPole
 {
+  private:
+    int num_states = 4;
+    int num_actions = 2;
+
   private:
     double cart_x;
     const double cart_y = 0.0;
@@ -49,10 +54,14 @@ class CartPole
     ~CartPole();
 
   public:
+    int observation_space();
+    int action_space();
+
+  public:
     /* 初期化 */
     std::tuple<double, double, double, double> reset();
     /* 記録、動画に出力 */
-    bool render(std::string episode_name);
+    bool render();
     /* 実行 */
     std::tuple<double, double, double, double, double, bool> step(int action);
 };
@@ -65,14 +74,28 @@ CartPole::~CartPole()
 {
 }
 
+int CartPole::observation_space()
+{
+  return num_states;
+}
+
+int CartPole::action_space()
+{
+  return num_actions;
+}
+
 std::tuple<double, double, double, double> CartPole::reset()
 {
   time_step = 0;
 
-  cart_x = 0.0;
-  cart_v = 0.0;
-  pole_x = 0.0;
-  pole_v = 0.0;
+  std::random_device rdm;
+  std::mt19937 mst(rdm());
+  std::uniform_real_distribution<double> range(-0.05, 0.05);
+
+  cart_x = range(mst);
+  cart_v = range(mst);
+  pole_x = range(mst);
+  pole_v = range(mst);
 
   reward = 0.0;
   done   = false;
@@ -80,9 +103,9 @@ std::tuple<double, double, double, double> CartPole::reset()
   return std::forward_as_tuple(cart_x, cart_v, pole_x, pole_v);
 }
 
-bool CartPole::render(std::string episode_name)
+bool CartPole::render()
 {
-  movie_name = "data/" + episode_name + ".dat";
+  movie_name = "data/result.dat";
   fout.open(movie_name, std::ios::app);
   
   if(!fout){
@@ -93,7 +116,7 @@ bool CartPole::render(std::string episode_name)
   fout << time_step << " " << cart_x << " " << cart_y << " " << pole_x << std::endl;
   fout << std::endl;
 
-  std::cout << "File: " << episode_name << " updated !" << std::endl;
+  //std::cout << "result.dat created !" << std::endl;
   fout.close();
   return true;
 }
@@ -103,7 +126,7 @@ std::tuple<double, double, double, double, double, bool> CartPole::step(int acti
   reward = 0.0;
   time_step += 1;
 
-  double force;
+  double force = 0.0;
 
   if(action == PUSH_RIGHT) force = FORCE_RIGHT;
   else if(action == PUSH_LEFT) force = FORCE_LEFT;
