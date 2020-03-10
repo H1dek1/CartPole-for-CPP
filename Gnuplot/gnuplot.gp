@@ -12,7 +12,8 @@ outputFile = sprintf("image/result%05d.png", idFrame)
 print outputFile
 set output outputFile
 
-plot "data/episode_0.dat" every ::0:idFrame:1:idFrame using 2:3 with circles lc rgb "black"
+plot "data/episode_0.dat" every ::0:idFrame:1:idFrame using 2:3:($2*0 + 0.4) with circles fillstyle transparent solid 1.0 lc rgb "black", \
+     "data/episode_0.dat" every ::0:idFrame:1:idFrame using 2:3:($2 + 2*sin($4)):($3 + 2*cos($4)) with vector filled nohead lc rgb "red" lw 5
 
 idFrame = idFrame + 1
-if(idFrame < 2000) reread
+if(idFrame < 1000) reread
