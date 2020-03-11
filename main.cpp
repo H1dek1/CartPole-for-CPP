@@ -16,7 +16,7 @@ int main(void){
     std::tie(cart_x, cart_v, pole_x, pole_v) = env.reset();
 
 #ifdef _MOVIE_
-      if(iter == MAX_ITER - 1) env.render();
+    if(iter == MAX_ITER - 1) env.render();
 #endif //_MOVIE_
 
     /* 1 play */
@@ -35,7 +35,7 @@ int main(void){
 
       /* 動画 */
 #ifdef _MOVIE_
-        if(iter == MAX_ITER - 1) env.render();
+      if(iter == MAX_ITER - 1) env.render();
 #endif //_MOVIE_
 
 #ifndef _MOVIE_
