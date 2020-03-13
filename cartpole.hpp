@@ -75,7 +75,7 @@ class CartPole
       return num_actions;
     }
 
-    std::tuple<double, double, double, double> reset()
+    std::vector<double> reset()
     {
       time_step = 0;
     
@@ -91,7 +91,8 @@ class CartPole
       reward = 0.0;
       done   = false;
     
-      return std::forward_as_tuple(cart_x, cart_v, pole_x, pole_v);
+      std::vector<double> observation = {cart_x, cart_v, pole_x, pole_v};
+      return observation;
     }
 
     bool render()
@@ -112,7 +113,6 @@ class CartPole
       return true;
     }
 
-//std::tuple<double, double, double, double, double, bool> CartPole::step(int action)
     std::tuple<std::vector<double>, double, bool> step(int action)
     {
       reward = 0.0;
@@ -142,9 +142,11 @@ class CartPole
       if(done == false) reward = 1;
     
       //return std::forward_as_tuple(cart_x, cart_v, pole_x, pole_v, reward, done);
-      std::vector<double> tmp = {cart_x, cart_v, pole_x, pole_v};
+      std::vector<double> observation = {cart_x, cart_v, pole_x, pole_v};
+
+      std::tuple<std::vector<double>, double, bool> send = {observation, reward, done};
     
-      return std::forward_as_tuple(tmp, reward, done);
+      return send;
     }
 };
 #endif //__CARTPOLE__
