@@ -13,16 +13,16 @@
 
 #define G 9.8
 #define L 1.0
-#define M_POLE 1.0
+#define M_POLE 0.5
 #define M_CART 4.0
 
 #define CART_X_MAX 2.4
-#define POLE_X_MAX 0.5
+#define POLE_X_MAX 0.73
 
 #define PUSH_LEFT        0
 #define PUSH_RIGHT       1
-#define FORCE_LEFT      -50.0
-#define FORCE_RIGHT      50.0
+#define FORCE_LEFT      -100.0
+#define FORCE_RIGHT      100.0
 
 #define NUM_STATES 4
 #define NUM_ACTIONS 2
@@ -95,9 +95,11 @@ class CartPole
       return observation;
     }
 
-    bool render()
+    bool render(std::string inputname)
     {
-      movie_name = "data/result.dat";
+      //std::cout << "File writing" << std::endl;
+      movie_name = inputname;
+      //movie_name = "data/result.dat";
       fout.open(movie_name, std::ios::app);
       
       if(!fout){
@@ -108,21 +110,22 @@ class CartPole
       fout << time_step << " " << cart_x << " " << cart_y << " " << pole_x << std::endl;
       fout << std::endl;
     
-      //std::cout << "result.dat created !" << std::endl;
       fout.close();
       return true;
     }
 
-    std::tuple<std::vector<double>, double, bool> step(int action)
+    std::tuple<std::vector<double>, double, bool> step(bool flag, int action)
     {
       reward = 0.0;
       time_step += 1;
     
       double force = 0.0;
     
-      if(action == PUSH_RIGHT) force = FORCE_RIGHT;
-      else if(action == PUSH_LEFT) force = FORCE_LEFT;
-      else std::cout << "ERROR!" << std::endl;
+      if(flag ==true){
+        if(action == PUSH_RIGHT) force = FORCE_RIGHT;
+        else if(action == PUSH_LEFT) force = FORCE_LEFT;
+        else std::cout << "ERROR!" << std::endl;
+      }
     
       double numerator   = force - M_POLE * G * sin(pole_x) * cos(pole_x) + M_POLE * L * pole_v * pole_v * sin(pole_x);
       double denominator = M_POLE * sin(pole_x) * sin(pole_x) + M_CART;
