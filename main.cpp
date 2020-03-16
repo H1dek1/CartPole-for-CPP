@@ -31,12 +31,21 @@ int main(void){
       std::uniform_int_distribution<int> which(0, 1);
 
       /* 行動決定 */
-      int action;
+      int action = 0;
       action = which(mt);
+      bool flag = false;
+      if(time_step % 20 == 0){
+        flag = true;
+        action = 0;
+        if(time_step % 40 == 0){
+          flag = true;
+          action = 1;
+        }
+      }
 
       double reward;
       bool done;
-      std::tie(observation, reward, done) = env.step(true, action);
+      std::tie(observation, reward, done) = env.step(flag, action);
 
       /* 動画 */
 #ifdef _MOVIE_
@@ -46,7 +55,7 @@ int main(void){
 #ifndef _MOVIE_
       if(done) break;
 #endif //_MOVIE_
-      if(done) break;
+      //if(done) break;
     }
     std::cout << "Episode:" << iter << " finished after " << time_step+1 << " timesteps" << std::endl;
   }

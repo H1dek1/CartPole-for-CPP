@@ -14,7 +14,7 @@
 #define G 9.8
 #define L 1.0
 #define M_POLE 0.5
-#define M_CART 4.0
+#define M_CART 8.0
 
 #define CART_X_MAX 2.4
 #define POLE_X_MAX 0.73
