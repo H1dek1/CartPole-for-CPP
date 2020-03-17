@@ -12,16 +12,12 @@ set noytics
 set size ratio -1
 set nokey
 
-directory = "./"
-
-#outputFile = sprintf("cartpole_cpp/image/result%05d.png", idFrame)
-#outputFile = sprintf("image/result%05d.png", idFrame)
-outputFile = sprintf("%simage/result%05d.png", directory, idFrame)
+outputFile = sprintf("%s/image/result%05d.png", directory, idFrame)
 
 if(idFrame % 10 == 0){print outputFile}
 set output outputFile
 
-inputFile = sprintf("%sdata/result.dat", directory)
+inputFile = sprintf("%s/data/result.dat", directory)
 #inputFile = sprintf("data/result.dat")
 
 length = 2.0
