@@ -3,7 +3,7 @@
 これはOpenAI Gymの['CartPole-v0'](https://github.com/openai/gym/wiki/CartPole-v0)をC/C++とGnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．
 
 ## OpenAI GymのCarPoleとは
-
+[OpenAI Gym](https://github.com/openai/gym)とは人工知能を研究する非営利企業[OpenAI](https://openai.com/)が提供する強化学習のシミュレーション用プラットフォームです．
 
 
 # DEMO
