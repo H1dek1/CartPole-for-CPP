@@ -22,7 +22,8 @@ Q学習で強化学習した例
 |:---|:---|:---|
 |Cart Position|-2.4|2.4|
 |Cart Velocity|-inf|inf|
-|Pole Angle|-41.8^\circ|41.8^\circ|
+|Pole Angle|-41.8 degree|41.8 degree|
+|Pole Angular Velocity|-inf|inf|
 
 ### observation variable
 
