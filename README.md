@@ -21,7 +21,8 @@ Q学習で強化学習した例
 |Variable|Min|Max|
 |:---|:---|:---|
 |Cart Position|-2.4|2.4|
-|Cart Velocity|-inf~|~inf|
+|Cart Velocity|-inf|inf|
+|Pole Angle|-41.8^\circ|41.8^\circ|
 
 ### observation variable
 
