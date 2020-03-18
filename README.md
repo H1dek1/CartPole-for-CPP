@@ -5,6 +5,8 @@
 # DEMO
 
 Q学習で強化学習した例
+
+![learned](https://user-images.githubusercontent.com/56115620/76943403-a1b56880-6942-11ea-90d1-4135a84e7d9a.gif)
  
 # Features
  
@@ -13,8 +15,8 @@ Q学習で強化学習した例
 # Requirement
  
 * C++17
-* g++
-* gnuplot-x11
+* g++ 7.5.0
+* gnuplot 5.2 patchlevel 2
  
 # Installation
  
@@ -28,6 +30,16 @@ DEMOの実行方法，基本的な使い方
  
 ```bash
 git clone https://github.com/H1dek1/CartPole-for-CPP.git
+```
+
+# Sample Program
+
+```bash
+#include "cartpole.hpp"
+```
+
+```bash
+Cartpole env;
 ```
  
 # Note
