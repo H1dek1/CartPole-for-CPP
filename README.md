@@ -11,16 +11,18 @@
 Q学習で強化学習した例
 
 ![learned](https://user-images.githubusercontent.com/56115620/76943403-a1b56880-6942-11ea-90d1-4135a84e7d9a.gif)
- 
-# Features
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=e^{i\pi}=-1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e^{i\pi}=-1" title="e^{i\pi}=-1" /></a>
- 
+# Environment
+## Algorithm
+
+## Simulation Setting
+
 # Requirement
  
 * C++17
 * g++ 7.5.0
 * gnuplot 5.2 patchlevel 2
+* vlc
  
 # Installation
  
