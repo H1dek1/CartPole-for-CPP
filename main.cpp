@@ -33,19 +33,10 @@ int main(void){
       /* 行動決定 */
       int action = 0;
       action = which(mt);
-      bool flag = false;
-      if(time_step % 20 == 0){
-        flag = true;
-        action = 0;
-        if(time_step % 40 == 0){
-          flag = true;
-          action = 1;
-        }
-      }
 
       double reward;
       bool done;
-      std::tie(observation, reward, done) = env.step(flag, action);
+      std::tie(observation, reward, done) = env.step(true, action);
 
       /* 動画 */
 #ifdef _MOVIE_
