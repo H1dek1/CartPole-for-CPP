@@ -1,6 +1,6 @@
 # CartPole-for-CPP
 
-これはOpenAI Gymの'CartPole-v0'をC/C++とGnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．
+これはOpenAI Gymの['CartPole-v0'](https://github.com/openai/gym/wiki/CartPole-v0)をC/C++とGnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．
 
 ## OpenAI GymのCarPoleとは
 
