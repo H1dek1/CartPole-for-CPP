@@ -10,9 +10,7 @@ Q学習で強化学習した例
  
 # Features
 
-```math
-e^{i\pi} = -1
-```
+$$e^{i\pi} = -1$$
 
  
 # Requirement
