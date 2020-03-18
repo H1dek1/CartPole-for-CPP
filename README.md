@@ -13,9 +13,18 @@ Q学習で強化学習した例
 ![learned](https://user-images.githubusercontent.com/56115620/76943403-a1b56880-6942-11ea-90d1-4135a84e7d9a.gif)
 
 # Environment
+環境は本家と同じです．
 ## Algorithm
 
 ## Simulation Setting
+状態変数の有効範囲は本家の値をそのまま引用し，次のように設定しています．
+|Variable|Min|Max|
+|:---|:---|:---|
+|Cart Position|-2.4|2.4|
+|Cart Velocity|-inf~|~inf|
+
+### observation variable
+
 
 # Requirement
  
