@@ -14,19 +14,7 @@ Q学習で強化学習した例
 
 # Environment
 環境は本家と同じです．
-## Algorithm
-
-## Simulation Setting
-状態変数の有効範囲は本家の値をそのまま引用し，次のように設定しています．
-|Variable|Min|Max|
-|:---|:---|:---|
-|Cart Position|-2.4|2.4|
-|Cart Velocity|-inf|inf|
-|Pole Angle|-41.8 degree|41.8 degree|
-|Pole Angular Velocity|-inf|inf|
-
-### observation variable
-
+運動方程式など
 
 # Requirement
  
@@ -42,24 +30,26 @@ sudo apt install gnuplot
 ```
  
 # Usage
- 
-インストールからサンプルプログラム実行まで
- 
+## Cloning 
+
+CartPole-for-CPPをクローンする方法
+
 ```bash
 git clone https://github.com/H1dek1/CartPole-for-CPP.git
+```
+
+## Details
+
+プログラムの詳細
+ 
+## Run Sample Program
+
+CartPole-for-CPPにはライブラリの他に使い方の例としてサンプルプログラムが含まれています．サンプルプログラムを実行するには以下を実行します．
+ 
+```bash
 cd cartpole_cpp
 ./sample.sh
 vlc result.mp4
-```
-
-# Sample Program
-
-```bash
-#include "cartpole.hpp"
-```
-
-```bash
-Cartpole env;
 ```
  
 # Note
