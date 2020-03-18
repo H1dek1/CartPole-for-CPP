@@ -34,13 +34,13 @@ git clone https://github.com/H1dek1/CartPole-for-CPP.git
 
 # Sample Program
 
-'''bash
+```bash
 #include "cartpole.hpp"
-'''
+```
 
-'''bash
+```bash
 Cartpole env;
-'''
+```
  
 # Note
  
