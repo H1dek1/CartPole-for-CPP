@@ -10,8 +10,7 @@ Q学習で強化学習した例
  
 # Features
 
-$$e^{i\pi} = -1$$
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=e^{i\pi}=-1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e^{i\pi}=-1" title="e^{i\pi}=-1" /></a>
  
 # Requirement
  
