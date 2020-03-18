@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR_NAME="./"
+DIR_NAME="."
 
 rm data/* -rf
 
