@@ -2,6 +2,10 @@
 
 これはOpenAI Gymの'CartPole-v0'をC/C++とGnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．
 
+##OpenAI GymのCarPoleとは
+
+
+
 # DEMO
 
 Q学習で強化学習した例
