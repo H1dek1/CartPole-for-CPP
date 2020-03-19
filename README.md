@@ -22,32 +22,30 @@ Q学習で強化学習した例
  
 # Installation
  
-```bash
-sudo apt install gnuplot
-```
+ 環境はUbuntu　18.04ですが，linuxであればなんでも動くと思います．
  
-# Usage
-## Cloning 
-
-CartPole-for-CPPをクローンする方法
-
 ```bash
+sudo apt install g++
+sudo apt install gnuplot
+sudo apt install vlc
 git clone https://github.com/H1dek1/CartPole-for-CPP.git
 ```
 
-## Details
-
-プログラムの詳細
- 
-## Run Sample Program
-
-CartPole-for-CPPにはライブラリの他に使い方の例としてサンプルプログラムが含まれています．サンプルプログラムを実行するには以下を実行します．
+ CartPole-for-CPPにはライブラリの他に使い方の例としてサンプルプログラムが含まれています．サンプルプログラムを実行するには以下を実行します．
  
 ```bash
 cd cartpole_cpp
 ./sample.sh
 vlc result.mp4
 ```
+これで動画が再生されればインストール完了です．
+ 
+# Usage
+
+
+## Details
+
+プログラムの詳細
 
 # Environment
 
