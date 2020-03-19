@@ -22,6 +22,8 @@ inputFile = sprintf("%s/data/result.dat", directory)
 
 length = 2.0
 
+set arrow from -3.0, 0.0 to 3.0, 0.0 nohead lw 1 lc rgb "black"
+
 plot inputFile every :::idFrame:1:idFrame using 2:3 with points pointsize 7 pointtype 5 lc rgb "black", \
      inputFile every :::idFrame:1:idFrame using 2:3:(length*sin($4)):(length*cos($4)) with vectors nohead lc rgb "orange" lw 10, \
      inputFile every :::idFrame:1:idFrame using 2:3 with points pointsize 2 pointtype 7 lc rgb "gray", \
