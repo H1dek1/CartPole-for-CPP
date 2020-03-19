@@ -58,12 +58,24 @@ cartの位置と速度，poleの角度と角速度は本家と同じく-0.05~+0.
 |Num|observation|Min|Max|
 |:---|:---|:---|:---|
 |0|Cart Position|-2.4|2.4|
+|1|Cart Velocity|-inf|inf|
+|2|Pole Angle|-41.8 degree|41.8 degree|
+|3|Pole Angular Velocity|-inf|inf|
+(引用：[CartPole-v0](https://github.com/openai/gym/wiki/CartPole-v0))
 
 step関数は環境を1ステップ進める関数です．第一引数のflagはbool値で，falseにすると，外力を受けなくなります．第二引数のactionは本家と同じく，
 
 ```bash
 std::tie(observation, reward, done) = env.step(flag, action)
 ```
+
+第一引数のflagはbool値で，falseにすると，外力を受けなくなります．第二引数のactionは本家と同じく，次のように設定しています．
+
+|Num|Action|
+|:---|:---|
+|0|Push cart to the left|
+|1|Push cart to the right|
+(引用：[CartPole-v0](https://github.com/openai/gym/wiki/CartPole-v0))
 
 ## Details
 
