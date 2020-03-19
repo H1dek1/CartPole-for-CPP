@@ -47,11 +47,17 @@ vlc result.mp4
 #include "cartpole_cpp.hpp"
 ```
 
+以下のコマンドで環境のインスタンスを作成し，環境を初期化します．
+
 ```bash
 CartPole env;
 std::vector<double> observation = env.reset();
 ```
-このコマンドで環境のインスタンスを作成し，環境を初期化します．cartの位置と速度，poleの角度と角速度は-0.05~+0.05の範囲の中で乱数によって初期化されます．reset()関数は返り値としてcartの位置，cartの速度，poleの位置，poleの速度を，double型の配列（要素数4）で返します．
+cartの位置と速度，poleの角度と角速度は本家と同じく-0.05~+0.05の範囲の中で乱数によって初期化されます．reset()関数は返り値としてcartの位置，cartの速度，poleの位置，poleの速度を，double型の配列（要素数4）で返します．
+
+|number|
+
+step関数は環境を1ステップ進める関数です．第一引数のflagはbool値で，falseにすると，外力を受けなくなります．第二引数のactionは本家と同じく，
 
 ```bash
 std::tie(observation, reward, done) = env.step(flag, action)
