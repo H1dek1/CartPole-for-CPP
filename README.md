@@ -60,6 +60,8 @@ vlc result.mp4
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" title="L=K-U=\frac{M}{2}{\dot{X}}^2+\frac{m}{2}\left(\dot{x}^2+\dot{y}^2 \right )-mglcos\theta" /></a>
 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" title="L=K-U=\frac{M}{2}{\dot{X}}^2+\frac{m}{2}\left(\dot{x}^2+\dot{y}^2 \right )-mglcos\theta" /></a>
+
 これよりXとthetaに関する運動方程式は，
 
 
