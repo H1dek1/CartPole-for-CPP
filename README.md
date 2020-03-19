@@ -72,7 +72,7 @@ vlc result.mp4
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\ddot{X}=\frac{F-mgsin\theta&space;cos\theta&space;&plus;&space;ml\dot{\theta}^2&space;sin\theta}{msin^2\theta&plus;M}" target="_blank"><img src="https://latex.codecogs.com/png.latex?\ddot{X}=\frac{F-mgsin\theta&space;cos\theta&space;&plus;&space;ml\dot{\theta}^2&space;sin\theta}{msin^2\theta&plus;M}" title="\ddot{X}=\frac{F-mgsin\theta cos\theta + ml\dot{\theta}^2 sin\theta}{msin^2\theta+M}" /></a>
 
-本プログラムでは以上の式から入力を外力Fとして，cartの位置，poleの角度を更新している．
+本プログラムでは以上の式から入力を外力<a href="https://www.codecogs.com/eqnedit.php?latex=F" target="_blank"><img src="https://latex.codecogs.com/png.latex?F" title="F" /></a>として，cartの位置，poleの角度を更新している．
  
 # Note
  
