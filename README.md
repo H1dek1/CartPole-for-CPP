@@ -49,9 +49,13 @@ vlc result.mp4
 
 ```bash
 CartPole env;
+std::vector<double> observation = env.reset();
 ```
+このコマンドで環境のインスタンスを作成し，環境を初期化します．cartの位置と速度，poleの角度と角速度は-0.05~+0.05の範囲の中で乱数によって初期化されます．reset()関数は返り値としてcartの位置，cartの速度，poleの位置，poleの速度を，double型の配列（要素数4）で返します．
 
-
+```bash
+std::tie(observation, reward, done) = env.step(flag, action)
+```
 
 ## Details
 
