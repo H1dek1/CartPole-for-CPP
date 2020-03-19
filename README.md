@@ -70,7 +70,7 @@ vlc result.mp4
 
 これらより，
 
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=\ddot{X}=\frac{F-mgsin\theta&space;cos\theta&space;&plus;&space;ml\dot{\theta}^2&space;sin\theta}{msin^2\theta&plus;M}" target="_blank"><img src="https://latex.codecogs.com/png.latex?\ddot{X}=\frac{F-mgsin\theta&space;cos\theta&space;&plus;&space;ml\dot{\theta}^2&space;sin\theta}{msin^2\theta&plus;M}" title="\ddot{X}=\frac{F-mgsin\theta cos\theta + ml\dot{\theta}^2 sin\theta}{msin^2\theta+M}" /></a>
  
 # Note
  
