@@ -14,7 +14,12 @@ Q学習で強化学習した例
 
 # Environment
 
+本プログラムの環境は次のようなものです．
 ![cartpole](https://user-images.githubusercontent.com/56115620/77049920-451e8000-6a0c-11ea-8106-803f517d0716.png)
+
+## Motion Equation
+
+プログラムのアルゴリズムの元になる系の運動方程式を示します．cartの位置は，poleの重心位置は
 
 環境は本家と同じです．
 運動方程式など
