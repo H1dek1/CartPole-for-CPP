@@ -41,6 +41,16 @@ vlc result.mp4
 これで動画が再生されればインストール完了です．
  
 # Usage
+このプログラムはcartpole_cpp.hppをインクルードするだけで利用できます．
+
+```bash
+#include "cartpole_cpp.hpp"
+```
+
+```bash
+CartPole env;
+```
+
 
 
 ## Details
