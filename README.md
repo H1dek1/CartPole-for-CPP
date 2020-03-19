@@ -13,6 +13,9 @@ Q学習で強化学習した例
 ![learned](https://user-images.githubusercontent.com/56115620/76943403-a1b56880-6942-11ea-90d1-4135a84e7d9a.gif)
 
 # Environment
+
+![cartpole](https://user-images.githubusercontent.com/56115620/77049920-451e8000-6a0c-11ea-8106-803f517d0716.png)
+
 環境は本家と同じです．
 運動方程式など
 
