@@ -15,7 +15,7 @@ Q学習で強化学習した例
 # Environment
 
 本プログラムの環境は次のようなものです．
-![cartpole](https://user-images.githubusercontent.com/56115620/77049920-451e8000-6a0c-11ea-8106-803f517d0716.png)
+![cartpole](https://user-images.githubusercontent.com/56115620/77053217-5918b080-6a11-11ea-846a-49924e6765c8.png)
 
 ## Motion Equation
 
