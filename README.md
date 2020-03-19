@@ -1,9 +1,9 @@
 # CartPole-for-CPP
 
-これはOpenAI Gymの['CartPole-v0'](https://github.com/openai/gym/wiki/CartPole-v0)をC/C++とgnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．
+これはOpenAI Gymの['CartPole-v0'](https://github.com/openai/gym/wiki/CartPole-v0)をC/C++とgnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．パスの設定などは一切必要なく，cartpole_cpp.hppをインクルードするだけで実行できるため，linuxなどに詳しくない方でもすぐに使えます．
 
 ## OpenAI GymのCarPoleとは
-[OpenAI Gym](https://github.com/openai/gym)とは人工知能を研究する非営利企業[OpenAI](https://openai.com/)が提供する強化学習のシミュレーション用プラットフォームです．
+[OpenAI Gym](https://github.com/openai/gym)とは人工知能を研究する非営利企業[OpenAI](https://openai.com/)が提供する強化学習のシミュレーション用プラットフォームです．その中でCartPoleは台車の上に載った棒をどれだけ長い時間立てていられるかというシミュレーションです．ユーザーは各タイムステップで，台車を左に押すか右の押すかのどちらかの行動をとり，棒が倒れないように台車を動かします．
 
 
 # DEMO
@@ -11,19 +11,6 @@
 Q学習で強化学習した例
 
 ![learned](https://user-images.githubusercontent.com/56115620/76943403-a1b56880-6942-11ea-90d1-4135a84e7d9a.gif)
-
-# Environment
-
-本プログラムの環境は次のようなものです．
-![cartpole](https://user-images.githubusercontent.com/56115620/77053217-5918b080-6a11-11ea-846a-49924e6765c8.png)
-
-## Motion Equation
-
-プログラムのアルゴリズムの元になる系のラグランジュの運動方程式を示します．cartの位置は(X, 0)，poleの重心位置は(X+lsin(theta), lcos(theta))であるから，ラグランジアンは，
-
-L=
-
-これよりXとthetaに関する運動方程式は，
 
 
 # Requirement
@@ -61,6 +48,22 @@ cd cartpole_cpp
 ./sample.sh
 vlc result.mp4
 ```
+
+# Environment
+
+本プログラムの環境は次のようなものです．
+![cartpole](https://user-images.githubusercontent.com/56115620/77053217-5918b080-6a11-11ea-846a-49924e6765c8.png)
+
+## Motion Equation
+
+プログラムのアルゴリズムの元になる系のラグランジュの運動方程式を示します．cartの位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X,&space;0&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X,&space;0&space;\right&space;)" title="\left( X, 0 \right )" /></a>，poleの重心位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X&plus;l&space;sin(\theta),&space;l&space;cos(\theta)&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X&plus;l&space;sin(\theta),&space;l&space;cos(\theta)&space;\right&space;)" title="\left( X+l sin(\theta), l cos(\theta) \right )" /></a>であるから，ラグランジアンは，
+
+L=
+
+これよりXとthetaに関する運動方程式は，
+
+
+
  
 # Note
  
