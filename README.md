@@ -56,9 +56,9 @@ vlc result.mp4
 
 ## Motion Equation
 
-プログラムのアルゴリズムの元になる系のラグランジュの運動方程式を示します．cartの位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X,&space;0&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X,&space;0&space;\right&space;)" title="\left( X, 0 \right )" /></a>，poleの重心位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X&plus;l&space;sin(\theta),&space;l&space;cos(\theta)&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X&plus;l&space;sin(\theta),&space;l&space;cos(\theta)&space;\right&space;)" title="\left( X+l sin(\theta), l cos(\theta) \right )" /></a>であるから，ラグランジアンは，
+プログラムのアルゴリズムの元になる系のラグランジュの運動方程式を示します．cartの位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X,&space;0&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X,&space;0&space;\right&space;)" title="\left( X, 0 \right )" /></a>，poleの重心位置は<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\left(&space;X&plus;l&space;sin\theta,&space;l&space;cos\theta&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\left(&space;X&plus;l&space;sin(\theta),&space;l&space;cos(\theta)&space;\right&space;)" title="\left( X+l sin(\theta), l cos(\theta) \right )" /></a>であるから，ラグランジアンは，
 
-L=
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;L=K-U=\frac{M}{2}{\dot{X}}^2&plus;\frac{m}{2}\left(\dot{x}^2&plus;\dot{y}^2&space;\right&space;)-mglcos\theta" title="L=K-U=\frac{M}{2}{\dot{X}}^2+\frac{m}{2}\left(\dot{x}^2+\dot{y}^2 \right )-mglcos\theta" /></a>
 
 これよりXとthetaに関する運動方程式は，
 
