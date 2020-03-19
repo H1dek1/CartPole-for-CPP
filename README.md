@@ -62,11 +62,13 @@ vlc result.mp4
 
 これより<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;X" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;X" title="X" /></a>に関する運動方程式は，
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{x}}&space;\right)-\frac{\partial&space;L}{\partial&space;x}=F" target="_blank"><img src="https://latex.codecogs.com/png.latex?\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{x}}&space;\right)-\frac{\partial&space;L}{\partial&space;x}=F" title="\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{x}} \right)-\frac{\partial L}{\partial x}=F" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{X}}&space;\right)-\frac{\partial&space;L}{\partial&space;X}=F\Leftrightarrow&space;\ddot{X}=\frac{F}{m&plus;M}-\frac{ml}{m&plus;M}\left(&space;\ddot{\theta}cos\theta-\dot{\theta}^2sin\theta&space;\right&space;)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{X}}&space;\right)-\frac{\partial&space;L}{\partial&space;X}=F\Leftrightarrow&space;\ddot{X}=\frac{F}{m&plus;M}-\frac{ml}{m&plus;M}\left(&space;\ddot{\theta}cos\theta-\dot{\theta}^2sin\theta&space;\right&space;)" title="\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{X}} \right)-\frac{\partial L}{\partial X}=F\Leftrightarrow \ddot{X}=\frac{F}{m+M}-\frac{ml}{m+M}\left( \ddot{\theta}cos\theta-\dot{\theta}^2sin\theta \right )" /></a>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\theta" title="\theta" /></a>に関する運動方程式は，
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=0\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=0\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" title="\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\theta}} \right)-\frac{\partial L}{\partial \theta}=0\Leftrightarrow \ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" /></a>
+
+これらより，
 
 
  
