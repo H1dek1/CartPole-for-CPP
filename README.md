@@ -2,7 +2,7 @@
 
 これはOpenAI Gymの['CartPole-v0'](https://github.com/openai/gym/wiki/CartPole-v0)をC/C++とgnuplotで書き直したものです．PythonではなくC/C++で機械学習のテストがしたいという方向けに開発しました．パスの設定などは一切必要なく，cartpole_cpp.hppをインクルードするだけで実行できるため，linuxなどに詳しくない方でもすぐに使えます．
 
-## OpenAI GymのCarPoleとは
+## OpenAI GymのCartPoleとは
 [OpenAI Gym](https://github.com/openai/gym)とは人工知能を研究する非営利企業[OpenAI](https://openai.com/)が提供する強化学習のシミュレーション用プラットフォームです．その中でCartPoleは台車の上に載った棒をどれだけ長い時間立てていられるかというシミュレーションです．ユーザーは各タイムステップで，台車を左に押すか右の押すかのどちらかの行動をとり，棒が倒れないように台車を動かします．
 
 
