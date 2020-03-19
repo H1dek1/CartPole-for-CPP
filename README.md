@@ -66,7 +66,7 @@ vlc result.mp4
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\theta" title="\theta" /></a>に関する運動方程式は，
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=F\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=F\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" title="\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\theta}} \right)-\frac{\partial L}{\partial \theta}=F\Leftrightarrow \ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=0\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" target="_blank"><img src="https://latex.codecogs.com/png.latex?\frac{d}{dt}\left(&space;\frac{\partial&space;L}{\partial&space;\dot{\theta}}&space;\right)-\frac{\partial&space;L}{\partial&space;\theta}=0\Leftrightarrow&space;\ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" title="\frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\theta}} \right)-\frac{\partial L}{\partial \theta}=0\Leftrightarrow \ddot{\theta}=\frac{g}{l}sin\theta-\frac{\ddot{X}}{l}cos\theta" /></a>
 
 
  
