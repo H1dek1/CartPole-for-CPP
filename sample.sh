@@ -6,7 +6,7 @@ rm data/* -rf
 
 rm image/* -rf
 
-g++ main.cpp -o run
+g++ sample.cpp -o run
 
 ./run
 
