@@ -2,7 +2,7 @@
 #include <random>
 
 #define MAX_ITER 1
-#define _MOVIE_ 0
+#define _MOVIE_ false
 
 int main(void){
   CartPole env;
@@ -14,7 +14,7 @@ int main(void){
   for(int iter = 0; iter < MAX_ITER; iter++){
     observation = env.reset();
 
-    if(iter == MAX_ITER - 1) env.render(input);
+    if(_MOVIE_) if(iter == MAX_ITER - 1) env.render(input);
 
     /* 1 play */
     int time_step;
@@ -25,19 +25,14 @@ int main(void){
       std::uniform_int_distribution<int> which(0, 1);
 
       /* 行動決定 */
-      int action = 0;
-      action = which(mt);
+      int action = which(mt);
 
-      double reward;
-      bool done;
       std::tie(observation, reward, done) = env.step(true, action);
 
       /* 動画 */
-      if(iter == MAX_ITER - 1) env.render(input);
+      if(_MOVIE_) if(iter == MAX_ITER - 1) env.render(input);
 
-#ifndef _MOVIE_
-      if(done) break;
-#endif //_MOVIE_
+      if(!_MOVIE_) if(done) break;
     }
     std::cout << "Episode:" << iter << " finished after " << time_step+1 << " timesteps" << std::endl;
   }
