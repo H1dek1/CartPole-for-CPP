@@ -7,6 +7,7 @@
 #include <cmath>
 #include <tuple>
 #include <random>
+#include <unistd.h>
 
 #define MAX_TIME_STEP 200
 #define DT            5.0e-2
@@ -33,6 +34,7 @@ class CartPole
   private:
     int num_states;
     int num_actions;
+    FILE* gp;
 
   private:
     double cart_x;
@@ -63,6 +65,11 @@ class CartPole
 
     ~CartPole()
     {
+      if(gp!=NULL){
+        std::cout << "gnuplot closed" << std::endl;
+        //fflush(gp);
+        pclose(gp);
+      }
     }
 
     int observation_space()
@@ -77,6 +84,19 @@ class CartPole
 
     std::vector<double> reset()
     {
+      if(gp!=NULL){
+        std::cout << "gnuplot reset" << std::endl;
+        pclose(gp);
+      }
+      gp = popen("gnuplot", "w");
+      fprintf(gp, "set xrange [-3.0:3.0]\n");
+      fprintf(gp, "set yrange [-2.5:2.5]\n");
+      fprintf(gp, "set xzeroaxis\n");
+      fprintf(gp, "set noytics\n");
+      fprintf(gp, "set size ratio -1\n");
+      fprintf(gp, "set nokey\n");
+      fprintf(gp, "set arrow from -3.0, 0.0 to 3.0, 0.0 nohead lw 1 lc rgb 'black'\n");
+
       time_step = 0;
     
       std::random_device rdm;
@@ -95,22 +115,14 @@ class CartPole
       return observation;
     }
 
-    bool render(std::string inputname)
+    bool render()
     {
-      //std::cout << "File writing" << std::endl;
-      movie_name = inputname;
-      //movie_name = "data/result.dat";
-      fout.open(movie_name, std::ios::app);
-      
-      if(!fout){
-        std::cout << "File open failed!" << std::endl;
-        return false;
-      }
-    
-      fout << time_step << " " << cart_x << " " << cart_y << " " << pole_x << std::endl;
-      fout << std::endl;
-    
-      fout.close();
+      fprintf(gp, "plot \"+\" using(%lf):(%lf) with points pointsize 7 pointtype 5 lc rgb \"black\", ", cart_x, cart_y);
+      fprintf(gp, "\"+\" using(%lf):(%lf):(%lf):(%lf) with vectors nohead lw 10 lc rgb \"orange\", ", cart_x, cart_y, (2*L*sin(pole_x)), (2*L*cos(pole_x)));
+      fprintf(gp, "\"+\" using(%lf):(%lf) with points pointsize 2 pointtype 7 lc rgb \"gray\"\n", cart_x, cart_y);
+      fflush(gp);
+      usleep(50000);
+      //pclose(gp);
       return true;
     }
 

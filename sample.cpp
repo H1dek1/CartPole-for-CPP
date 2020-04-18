@@ -1,20 +1,19 @@
 #include "cartpole.hpp"
 #include <random>
 
-#define MAX_ITER 1
-#define _MOVIE_ false
+#define MAX_ITER 5
+#define _MOVIE_ true
 
 int main(void){
   CartPole env;
   double reward;
   bool   done;
   std::vector<double> observation;
-  std::string input = "data/result.dat";
 
   for(int iter = 0; iter < MAX_ITER; iter++){
     observation = env.reset();
 
-    if(_MOVIE_) if(iter == MAX_ITER - 1) env.render(input);
+    if(_MOVIE_) if(iter == MAX_ITER - 1) env.render();
 
     /* 1 play */
     int time_step;
@@ -30,9 +29,9 @@ int main(void){
       std::tie(observation, reward, done) = env.step(true, action);
 
       /* 動画 */
-      if(_MOVIE_) if(iter == MAX_ITER - 1) env.render(input);
+      if(_MOVIE_) if(iter == MAX_ITER - 1) env.render();
 
-      if(!_MOVIE_) if(done) break;
+      if(done) break;
     }
     std::cout << "Episode:" << iter << " finished after " << time_step+1 << " timesteps" << std::endl;
   }
