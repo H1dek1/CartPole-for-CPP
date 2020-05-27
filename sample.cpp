@@ -1,10 +1,10 @@
 #include "cartpole.hpp"
 #include <random>
 
-#define MAX_ITER 5
-#define _MOVIE_ true
-
 int main(void){
+  const double MAX_ITER = 5;
+  const bool   ANIM = true;
+
   CartPole env;
   double reward;
   bool   done;
@@ -13,23 +13,23 @@ int main(void){
   for(int iter = 0; iter < MAX_ITER; iter++){
     observation = env.reset();
 
-    if(_MOVIE_) if(iter == MAX_ITER - 1) env.render();
+    if(ANIM) if(iter == MAX_ITER - 1) env.render();
 
-    /* 1 play */
+    /* 1 episode */
     int time_step;
-    for(time_step = 0; time_step < MAX_TIME_STEP; time_step++){
-      /* 乱数の準備 */
+    for(time_step = 0; time_step < 200; time_step++){
+      /* random */
       std::random_device rd;
       std::mt19937 mt(rd());
       std::uniform_int_distribution<int> which(0, 1);
 
-      /* 行動決定 */
+      /* decide action */
       int action = which(mt);
 
       std::tie(observation, reward, done) = env.step(true, action);
 
-      /* 動画 */
-      if(_MOVIE_) if(iter == MAX_ITER - 1) env.render();
+      /* animation */
+      if(ANIM) if(iter == MAX_ITER - 1) env.render();
 
       if(done) break;
     }

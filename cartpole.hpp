@@ -1,5 +1,5 @@
-#ifndef __CARTPOLE__
-#define __CARTPOLE__
+#ifndef CARTPOLE_H
+#define CARTPOLE_H
 
 #include <iostream>
 #include <fstream>
@@ -9,32 +9,32 @@
 #include <random>
 #include <unistd.h>
 
-#define MAX_TIME_STEP 200
-#define DT            5.0e-2
-
-#define G 9.8
-#define L 1.0
-#define M_POLE 0.5
-#define M_CART 8.0
-
-#define CART_X_MAX 2.4
-#define POLE_X_MAX 0.73
-
-#define PUSH_LEFT        0
-#define PUSH_RIGHT       1
-#define FORCE_LEFT      -100.0
-#define FORCE_RIGHT      100.0
-
-#define NUM_STATES 4
-#define NUM_ACTIONS 2
-#define CART_Y 0.0
-
 class CartPole
 {
   private:
     int num_states;
     int num_actions;
     FILE* gp;
+
+  private:
+    const double DT = 5.0e-2;
+
+    const double L = 1.0;
+    const double G = 9.8;
+    const double M_POLE = 0.5;
+    const double M_CART = 8.0;
+    const double CART_Y = 0.0;
+
+    const double CART_X_MAX = 2.4;
+    const double POLE_X_MAX = 0.73;
+
+    const double PUSH_LEFT   =  0;
+    const double PUSH_RIGHT  =  1;
+    const double FORCE_LEFT  = -100.0;
+    const double FORCE_RIGHT =  100.0;
+
+    const int NUM_STATES  = 4;
+    const int NUM_ACTIONS = 2;
 
   private:
     double cart_x;
@@ -66,8 +66,6 @@ class CartPole
     ~CartPole()
     {
       if(gp!=NULL){
-        std::cout << "gnuplot closed" << std::endl;
-        //fflush(gp);
         pclose(gp);
       }
     }
@@ -121,8 +119,7 @@ class CartPole
       fprintf(gp, "\"+\" using(%lf):(%lf):(%lf):(%lf) with vectors nohead lw 10 lc rgb \"orange\", ", cart_x, cart_y, (2*L*sin(pole_x)), (2*L*cos(pole_x)));
       fprintf(gp, "\"+\" using(%lf):(%lf) with points pointsize 2 pointtype 7 lc rgb \"gray\"\n", cart_x, cart_y);
       fflush(gp);
-      usleep(50000);
-      //pclose(gp);
+      usleep(DT*1000);
       return true;
     }
 
@@ -136,7 +133,7 @@ class CartPole
       if(flag ==true){
         if(action == PUSH_RIGHT) force = FORCE_RIGHT;
         else if(action == PUSH_LEFT) force = FORCE_LEFT;
-        else std::cout << "ERROR!" << std::endl;
+        else std::cout << "Invalid action!" << std::endl;
       }
     
       double numerator   = force - M_POLE * G * sin(pole_x) * cos(pole_x) + M_POLE * L * pole_v * pole_v * sin(pole_x);
@@ -156,7 +153,6 @@ class CartPole
     
       if(done == false) reward = 1;
     
-      //return std::forward_as_tuple(cart_x, cart_v, pole_x, pole_v, reward, done);
       std::vector<double> observation = {cart_x, cart_v, pole_x, pole_v};
 
       std::tuple<std::vector<double>, double, bool> send = {observation, reward, done};
@@ -164,4 +160,4 @@ class CartPole
       return send;
     }
 };
-#endif //__CARTPOLE__
+#endif //CARTPOLE_H
